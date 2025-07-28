@@ -11,7 +11,9 @@ Welcome to the **Next.js 15 Starter** repository! This starter template is built
 - **Prettier 3**
 - **Tailwind CSS 3**
 - **App Directory**
-
+- **Dockerfile** with Node.js 22.15.0 (Alpine)
+- **Dockerfile.bun** with Bun 1.2.10 (Alpine)
+  
 ### 🛠️ ESLint Plugins
 
 - [**@eslint/js**](https://www.npmjs.com/package/@eslint/js)
@@ -82,3 +84,15 @@ To enhance development experience, install the following VS Code extensions:
     ```bash
     npm run build
     ```
+
+### 🐳 Docker Setup
+
+To use Docker, make sure Docker is installed on your machine. Then, build and run the Docker container:
+
+```bash
+docker build . -t nextjs-15-starter
+# or if using Bun
+docker build . -t nextjs-15-starter -f Dockerfile.bun
+
+docker run -p 3000:3000 nextjs-15-starter
+```
